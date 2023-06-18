@@ -1,0 +1,32 @@
+#!/bin/tcsh -f
+echo "SYNTHESIS IS STARTING >>>>>>>>>>>"
+echo ".................................................................."
+echo ".................................................................."
+echo "............................VSDSYNTH.............................."
+echo ".................................................................."
+echo ".................................................................."
+
+set my_work_dir = "pwd"
+
+if($#argv != 1)then
+	echo "INFO : No file found"
+	exit 1 
+endif
+
+if(! -f $argv[1] || $argv[1] == "-help")then
+	if($argv[1] != "-help")then
+		echo "INFO: File is not in the directory"
+		exit 1
+	else 
+		echo "STEP 1: go to chatgpt"
+		echo "STEP 2: type your problem "
+	        echo "STEP 3: execute here"
+		exit 1
+	endif
+else
+	tclsh vsdsynth.tcl $argv[1]
+endif	
+
+
+
+
